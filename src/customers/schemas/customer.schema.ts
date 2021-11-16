@@ -6,16 +6,14 @@ export type CustomerDocument = Customer & Document;
 @Schema()
 export class Customer {
         
-    @Prop()
-    custId: string;
-
+ 
     @Prop()
     custFName: string;
     
     @Prop()
     custLName: string;
     @Prop()
-    custOrderN: string;
+    custOrderNum:string;
 }
 
 export const CustomerSchema = SchemaFactory.createForClass(Customer);
