@@ -8,15 +8,16 @@ import { CustomerDocument } from './schemas/customer.schema';
 
 @Injectable()
 export class CustomersService {
-  CustomerModel: any;
-  constructor(@InjectModel(Customer.name) private orderModel: Model<CustomerDocument>) {}
-  create(createOrderDto: CreateCustomerDto) {
-    return 'This action adds a new order';
+  constructor(@InjectModel(Customer.name) private customerModel: Model<CustomerDocument>) {}
+  
+  create(createCustomerDto: CreateCustomerDto) {
+    return 'This action adds a new customer';
   }
 
   async findAll(): Promise<Customer[]> {
-    return this.CustomerModel.find().exec();
+    return this.customerModel.find().exec();
   }
+
 
 
 
