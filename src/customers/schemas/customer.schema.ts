@@ -1,21 +1,21 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-export type OrderDocument = Order & Document;
+export type CustomerDocument = Customer & Document;
 
 @Schema()
-export class Order {
-    @Prop()
-    orderRefNo: string;
-    
+export class Customer {
+        
     @Prop()
     custId: string;
 
     @Prop()
-    products:any[];
-
+    custFName: string;
+    
     @Prop()
-    status: string;
+    custLName: string;
+    @Prop()
+    custOrderN: string;
 }
 
-export const OrderSchema = SchemaFactory.createForClass(Order);
+export const CustomerSchema = SchemaFactory.createForClass(Customer);
